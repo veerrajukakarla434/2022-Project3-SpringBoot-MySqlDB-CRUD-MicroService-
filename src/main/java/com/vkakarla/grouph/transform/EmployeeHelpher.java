@@ -1,5 +1,8 @@
 package com.vkakarla.grouph.transform;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -24,5 +27,19 @@ public class EmployeeHelpher {
 		BeanUtils.copyProperties(emp, dto);
 		return dto;
 	}
+	
+	
+	public List<EmployeeDto> maptoEmployeeDtoList(List<Employee> empList){
+		
+		List<EmployeeDto> list = new ArrayList<>();
+		
+		 for(Employee emp:empList) {
+			 EmployeeDto dto = prepareEmployeeResponse(emp);
+			 list.add(dto);
+		 }
+		
+		return list;
+	}
+	
 
 }

@@ -1,18 +1,19 @@
 package com.vkakarla.grouph.service;
 
+import java.util.List;
+
 import com.vkakarla.grouph.dto.EmployeeDto;
-import com.vkakarla.grouph.entities.Employee;
 
 public interface IEmployeeService {
 
 	
 	public void createEmployee(EmployeeDto dto);
 
-	public Employee getEmployeeById(long id);
+	public EmployeeDto getEmployeeById(long id);
 
-	public void updateEmployee(Employee employee);
+	public EmployeeDto updateEmployee(long employeeId, EmployeeDto dto);
 
 	public void deleteEmployee(long id);
 
-
+	public List<EmployeeDto> getAllEmployees();
 }
